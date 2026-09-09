@@ -4,23 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Bayu | Personal Profile</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-
     <nav>
-
         <div class="logo">
             BAYU<span>.</span>
         </div>
 
-        <div class="nav-menu">
+        <div class="nav-menu" id="navMenu">
             <a href="#home">Home</a>
             <a href="#profil">Profil</a>
             <a href="#skill">Skill</a>
@@ -29,33 +25,29 @@
             <a href="#prestasi">Prestasi</a>
         </div>
 
-        <button id="darkMode">☀</button>
-
+        <div class="nav-actions">
+            <button id="darkMode" aria-label="Toggle Dark Mode">☀</button>
+            <div class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-
     <!-- ================= HERO ================= -->
-
     <section id="home" class="hero">
-
         <div class="hero-background"></div>
 
         <div class="hero-text reveal">
-
-            <p class="small-title">
-                STUDENT • ELECTRONICS • TECHNOLOGY
-            </p>
-
+            <p class="small-title">STUDENT • ELECTRONICS • TECHNOLOGY</p>
             <h1>
                 Halo, saya
                 <span>Bayu.</span>
             </h1>
-
             <p class="description">
-                Halo semua! Terima kasih sudah mampir untuk melihat
-                seputar tentang saya. Perkenalkan, saya Bayu,
-                murid SMK Negeri 7 Surabaya yang suka mencoba
-                pengalaman baru.
+                Halo semua! Terima kasih sudah mampir untuk melihat seputar tentang saya.
+                Perkenalkan, saya Bayu, murid SMK Negeri 7 Surabaya yang suka mencoba pengalaman baru.
             </p>
 
             <div class="location">
@@ -63,665 +55,298 @@
             </div>
 
             <div class="hero-buttons">
-
-                <a href="#profil" class="button">
-                    Kenali Saya →
-                </a>
-
-                <a href="#proyek" class="button-outline">
-                    Lihat Proyek
-                </a>
-
+                <a href="#profil" class="button">Kenali Saya →</a>
+                <a href="#proyek" class="button-outline">Lihat Proyek</a>
             </div>
-
         </div>
-
 
         <div class="hero-card reveal">
-
-            <div class="glow-circle">
-                B
-            </div>
-
+            <div class="glow-circle">B</div>
             <h2>BAYU</h2>
-
-            <p>
-                Electronics Enthusiast
-            </p>
-
+            <p>Electronics Enthusiast</p>
             <div class="status">
-                <span></span>
-                Selalu mencari pengalaman baru
+                <span></span> Selalu mencari pengalaman baru
             </div>
-
         </div>
-
     </section>
-
 
     <!-- ================= PROFIL ================= -->
-
     <section id="profil">
-
         <div class="section-title reveal">
-
             <p>TENTANG SAYA</p>
-
             <h2>Profil</h2>
-
         </div>
-
 
         <div class="profile-box reveal">
-
-            <div class="profile-icon">
-                ⚡
-            </div>
-
+            <div class="profile-icon">⚡</div>
             <div>
-
-                <h3>
-                    Pelajar yang tidak suka membuang waktu.
-                </h3>
-
+                <h3>Pelajar yang tidak suka membuang waktu.</h3>
                 <p>
-                    Saya adalah seorang pelajar yang berusaha
-                    menggunakan waktu secara efisien untuk belajar,
-                    bermain, dan mencari pengalaman baru khususnya
-                    di bidang elektronika.
+                    Saya adalah seorang pelajar yang berusaha menggunakan waktu secara efisien
+                    untuk belajar, bermain, dan mencari pengalaman baru khususnya di bidang elektronika.
                 </p>
-
                 <p>
-                    Saya suka menganalisis masalah dan memberikan
-                    kritik yang membangun untuk membantu menemukan
-                    solusi yang lebih baik.
+                    Saya suka menganalisis masalah dan memberikan kritik yang membangun
+                    untuk membantu menemukan solusi yang lebih baik.
                 </p>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- ================= PENDIDIKAN ================= -->
-
     <section class="dark-section">
-
         <div class="section-title reveal">
-
             <p>RIWAYAT</p>
-
             <h2>Pendidikan</h2>
-
         </div>
-
 
         <div class="timeline reveal">
-
             <div class="timeline-item">
-
                 <div class="timeline-dot"></div>
-
                 <div class="timeline-content">
-
                     <span>SMK</span>
-
-                    <h3>
-                        SMK Negeri 7 Surabaya
-                    </h3>
-
-                    <p>
-                        Jurusan Teknik Audio Video (TAV)
-                    </p>
-
-                    <small>
-                        Mempelajari elektronika, teknologi,
-                        rangkaian dan praktik.
-                    </small>
-
+                    <h3>SMK Negeri 7 Surabaya</h3>
+                    <p>Jurusan Teknik Audio Video (TAV)</p>
+                    <small>Mempelajari elektronika, teknologi, rangkaian dan praktik.</small>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- ================= SKILL ================= -->
-
     <section id="skill">
-
         <div class="section-title reveal">
-
             <p>APA YANG SAYA KUASAI</p>
-
             <h2>Keahlian & Minat</h2>
-
         </div>
-
 
         <div class="skill-grid">
-
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Elektronika
-                </h3>
-
-                <p>
-                    Mempelajari rangkaian elektronik,
-                    sensor dan berbagai komponen.
-                </p>
-
+                <div class="skill-icon">⚡</div>
+                <h3>Elektronika</h3>
+                <p>Mempelajari rangkaian elektronik, sensor dan berbagai komponen.</p>
             </div>
 
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    🔧
-                </div>
-
-                <h3>
-                    Arduino
-                </h3>
-
-                <p>
-                    Membuat dan menguji berbagai
-                    proyek menggunakan mikrokontroler.
-                </p>
-
+                <div class="skill-icon">🔧</div>
+                <h3>Arduino</h3>
+                <p>Membuat dan menguji berbagai proyek menggunakan mikrokontroler.</p>
             </div>
 
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    💻
-                </div>
-
-                <h3>
-                    Coding
-                </h3>
-
-                <p>
-                    Membuat program untuk mikrokontroler
-                    dan proyek elektronik.
-                </p>
-
+                <div class="skill-icon">💻</div>
+                <h3>Coding</h3>
+                <p>Membuat program untuk mikrokontroler dan proyek elektronik.</p>
             </div>
 
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    🧠
-                </div>
-
-                <h3>
-                    Problem Solving
-                </h3>
-
-                <p>
-                    Menganalisis masalah dan mencari
-                    solusi yang efektif.
-                </p>
-
+                <div class="skill-icon">🧠</div>
+                <h3>Problem Solving</h3>
+                <p>Menganalisis masalah dan mencari solusi yang efektif.</p>
             </div>
 
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    🎮
-                </div>
-
-                <h3>
-                    Mobile Legends
-                </h3>
-
-                <p>
-                    Salah satu kegiatan saya ketika
-                    mempunyai waktu luang.
-                </p>
-
+                <div class="skill-icon">🎮</div>
+                <h3>Mobile Legends</h3>
+                <p>Salah satu kegiatan saya ketika mempunyai waktu luang.</p>
             </div>
 
-
             <div class="skill-card reveal">
-
-                <div class="skill-icon">
-                    🚀
-                </div>
-
-                <h3>
-                    Eksplorasi
-                </h3>
-
-                <p>
-                    Suka mencoba teknologi dan
-                    pengalaman baru.
-                </p>
-
+                <div class="skill-icon">🚀</div>
+                <h3>Eksplorasi</h3>
+                <p>Suka mencoba teknologi dan pengalaman baru.</p>
             </div>
-
         </div>
-
     </section>
 
-
     <!-- ================= PROYEK ================= -->
-
     <section id="proyek" class="dark-section">
-
         <div class="section-title reveal">
-
             <p>HASIL YANG PERNAH DIBUAT</p>
-
             <h2>Pengalaman Proyek</h2>
-
         </div>
 
-
         <div class="project-grid">
-
-
-            <!-- PROJECT 1 -->
-
             <div class="project-card reveal">
-
-                <div class="project-number">
-                    01
-                </div>
-
-                <div class="project-icon">
-                    📟
-                </div>
-
-                <h3>
-                    Board Auto OLED + MQ Tester
-                </h3>
-
+                <div class="project-number">01</div>
+                <div class="project-icon">📟</div>
+                <h3>Board Auto OLED + MQ Tester</h3>
                 <p>
-                    Membuat board tester menggunakan STM32
-                    yang menggabungkan OLED dengan sensor MQ
-                    untuk membantu proses pengujian berbagai
-                    sensor.
+                    Membuat board tester menggunakan STM32 yang menggabungkan OLED
+                    dengan sensor MQ untuk membantu proses pengujian berbagai sensor.
                 </p>
-
                 <div class="tags">
                     <span>STM32</span>
                     <span>OLED</span>
                     <span>MQ Sensor</span>
                 </div>
-
             </div>
 
-
-            <!-- PROJECT 2 -->
-
             <div class="project-card reveal">
-
-                <div class="project-number">
-                    02
-                </div>
-
-                <div class="project-icon">
-                    🤖
-                </div>
-
-                <h3>
-                    Robot Mobil Capit RC
-                </h3>
-
+                <div class="project-number">02</div>
+                <div class="project-icon">🤖</div>
+                <h3>Robot Mobil Capit RC</h3>
                 <p>
-                    Membuat robot mobil dengan sistem kontrol
-                    RC yang dilengkapi mekanisme capit untuk
-                    mengambil atau memindahkan benda.
-                    Proyek ini menggabungkan elektronika,
-                    motor dan sistem kontrol.
+                    Membuat robot mobil dengan sistem kontrol RC yang dilengkapi mekanisme
+                    capit untuk mengambil atau memindahkan benda. Proyek ini menggabungkan
+                    elektronika, motor dan sistem kontrol.
                 </p>
-
                 <div class="tags">
                     <span>Robotik</span>
                     <span>Motor</span>
                     <span>RC</span>
                     <span>Elektronika</span>
                 </div>
-
             </div>
 
-
-            <!-- PROJECT 3 -->
-
             <div class="project-card reveal">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <div class="project-icon">
-                    🔊
-                </div>
-
-                <h3>
-                    Sound System
-                </h3>
-
+                <div class="project-number">03</div>
+                <div class="project-icon">🔊</div>
+                <h3>Sound System</h3>
                 <p>
-                    Membuat dan mempelajari sistem audio,
-                    mulai dari pengolahan sinyal suara,
-                    amplifier, speaker hingga pengaturan
-                    agar suara dapat menghasilkan output
-                    yang baik.
+                    Membuat dan mempelajari sistem audio, mulai dari pengolahan sinyal
+                    suara, amplifier, speaker hingga pengaturan agar suara dapat menghasilkan
+                    output yang baik.
                 </p>
-
                 <div class="tags">
                     <span>Audio</span>
                     <span>Amplifier</span>
                     <span>Speaker</span>
                     <span>TAV</span>
                 </div>
-
             </div>
-
-
         </div>
-
     </section>
 
-
     <!-- ================= JURNAL ================= -->
-
     <section id="jurnal">
-
         <div class="section-title reveal">
-
             <p>CATATAN PERJALANAN</p>
-
             <h2>Jurnal Pengalaman</h2>
-
             <p class="section-desc">
-                Tempat untuk mencatat pengalaman belajar,
-                proyek, kegiatan dan hal-hal baru yang saya
-                temukan setiap hari.
+                Tempat untuk mencatat pengalaman belajar, proyek, kegiatan dan hal-hal baru
+                yang saya temukan setiap hari.
             </p>
-
         </div>
 
-
         <div class="journal">
-
-
             <article class="journal-card reveal">
-
                 <div class="date">
                     <strong>01</strong>
                     <span>PROYEK</span>
                 </div>
-
                 <div>
-
-                    <span class="journal-type">
-                        ELEKTRONIKA
-                    </span>
-
-                    <h3>
-                        Membuat Board Tester
-                    </h3>
-
+                    <span class="journal-type">ELEKTRONIKA</span>
+                    <h3>Membuat Board Tester</h3>
                     <p>
-                        Mengembangkan board tester menggunakan
-                        STM32, OLED dan sensor MQ. Dari proyek
-                        ini saya belajar mengenai komunikasi
-                        mikrokontroler dengan sensor dan display.
+                        Mengembangkan board tester menggunakan STM32, OLED dan sensor MQ.
+                        Dari proyek ini saya belajar mengenai komunikasi mikrokontroler dengan sensor dan display.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journal-card reveal">
-
                 <div class="date">
                     <strong>02</strong>
                     <span>BELAJAR</span>
                 </div>
-
                 <div>
-
-                    <span class="journal-type">
-                        PRAKTIK
-                    </span>
-
-                    <h3>
-                        Eksperimen Elektronika
-                    </h3>
-
+                    <span class="journal-type">PRAKTIK</span>
+                    <h3>Eksperimen Elektronika</h3>
                     <p>
-                        Mencoba memahami berbagai komponen
-                        elektronik dan mencari penyebab ketika
-                        sebuah rangkaian tidak bekerja dengan baik.
+                        Mencoba memahami berbagai komponen elektronik dan mencari penyebab
+                        ketika sebuah rangkaian tidak bekerja dengan baik.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journal-card reveal">
-
                 <div class="date">
                     <strong>03</strong>
                     <span>PROYEK</span>
                 </div>
-
                 <div>
-
-                    <span class="journal-type">
-                        ROBOTIK
-                    </span>
-
-                    <h3>
-                        Robot Mobil Capit RC
-                    </h3>
-
+                    <span class="journal-type">ROBOTIK</span>
+                    <h3>Robot Mobil Capit RC</h3>
                     <p>
-                        Mengerjakan proyek robot mobil dengan
-                        sistem kontrol RC dan mekanisme capit.
-                        Proyek ini menjadi pengalaman baru dalam
-                        menggabungkan mekanik dan elektronika.
+                        Mengerjakan proyek robot mobil dengan sistem kontrol RC dan mekanisme capit.
+                        Proyek ini menjadi pengalaman baru dalam menggabungkan mekanik dan elektronika.
                     </p>
-
                 </div>
-
             </article>
 
-
             <article class="journal-card reveal">
-
                 <div class="date">
                     <strong>04</strong>
                     <span>AUDIO</span>
                 </div>
-
                 <div>
-
-                    <span class="journal-type">
-                        SOUND SYSTEM
-                    </span>
-
-                    <h3>
-                        Mempelajari Sistem Audio
-                    </h3>
-
+                    <span class="journal-type">SOUND SYSTEM</span>
+                    <h3>Mempelajari Sistem Audio</h3>
                     <p>
-                        Belajar mengenai sistem sound,
-                        amplifier, speaker dan bagaimana
+                        Belajar mengenai sistem sound, amplifier, speaker dan bagaimana
                         menghasilkan suara yang baik.
                     </p>
-
                 </div>
-
             </article>
-
-
         </div>
-
     </section>
-
 
     <!-- ================= PRESTASI ================= -->
-
     <section id="prestasi" class="achievement-section">
-
         <div class="section-title reveal">
-
             <p>PENCAPAIAN</p>
-
             <h2>Prestasi</h2>
-
         </div>
-
 
         <div class="achievement-card reveal">
-
-
             <div class="achievement-badge">
-
                 <div class="badge-light"></div>
-
-                <strong>
-                    JUARA
-                </strong>
-
-                <span>
-                    PERVEKT
-                </span>
-
+                <strong>JUARA</strong>
+                <span>PERVEKT</span>
             </div>
-
 
             <div class="achievement-text">
-
-                <div class="winner">
-                    🏆 JUARA LOMBA
-                </div>
-
-                <h3>
-                    Program PERVEKT SMK
-                    Se-Jawa Timur
-                </h3>
-
+                <div class="winner">🏆 JUARA LOMBA</div>
+                <h3>Program PERVEKT SMK Se-Jawa Timur</h3>
+                <p>Saya berhasil meraih juara dalam lomba Program PERVEKT SMK untuk Kewirausahaan.</p>
+                <p>PERVEKT SMK merupakan singkatan dari <strong>Program Entrepreneur Vokasi Kreatif Terpadu</strong> bagi siswa SMK.</p>
                 <p>
-                    Saya berhasil meraih juara dalam lomba
-                    Program PERVEKT SMK untuk Kewirausahaan.
+                    Program ini merupakan inisiatif dari Dinas Pendidikan Provinsi Jawa Timur melalui
+                    bidang PPSMK yang bertujuan membekali siswa SMK dengan keterampilan dan pola pikir kewirausahaan.
                 </p>
-
-                <p>
-                    PERVEKT SMK merupakan singkatan dari
-                    <strong>
-                        Program Entrepreneur Vokasi Kreatif Terpadu
-                    </strong>
-                    bagi siswa SMK.
-                </p>
-
-                <p>
-                    Program ini merupakan inisiatif dari
-                    Dinas Pendidikan Provinsi Jawa Timur
-                    melalui bidang PPSMK yang bertujuan
-                    membekali siswa SMK dengan keterampilan
-                    dan pola pikir kewirausahaan.
-                </p>
-
-                <p>
-                    Program ini dirancang untuk melahirkan
-                    wirausahawan muda yang tangguh,
-                    kreatif dan berdaya saing.
-                </p>
+                <p>Program ini dirancang untuk melahirkan wirausahawan muda yang tangguh, kreatif dan berdaya saing.</p>
 
                 <div class="achievement-tags">
-
-                    <span>
-                        🏆 JUARA
-                    </span>
-
-                    <span>
-                        JAWA TIMUR
-                    </span>
-
-                    <span>
-                        KEWIRAUSAHAAN
-                    </span>
-
+                    <span>🏆 JUARA</span>
+                    <span>JAWA TIMUR</span>
+                    <span>KEWIRAUSAHAAN</span>
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
 
     <!-- ================= CONTACT ================= -->
-
     <section class="contact">
-
         <div class="section-title reveal">
-
             <p>PERJALANAN SAYA</p>
-
-            <h2>
-                Masih Banyak yang Akan Dipelajari.
-            </h2>
-
+            <h2>Masih Banyak yang Akan Dipelajari.</h2>
         </div>
-
         <p class="reveal">
-
-            Website ini merupakan dokumentasi kecil
-            perjalanan saya dalam belajar elektronika,
+            Website ini merupakan dokumentasi kecil perjalanan saya dalam belajar elektronika,
             mencoba teknologi baru dan mencari pengalaman.
-
         </p>
-
-        <a href="#home" class="button reveal">
-            ↑ Kembali ke Atas
-        </a>
-
+        <a href="#home" class="button reveal">↑ Kembali ke Atas</a>
     </section>
 
-
     <!-- ================= FOOTER ================= -->
-
     <footer>
-
-        <h3>
-            BAYU<span>.</span>
-        </h3>
-
-        <p>
-            Personal Profile • Electronics • Technology
-        </p>
-
-        <p class="copyright">
-            © 2026 Bayu. Personal Website.
-        </p>
-
+        <h3>BAYU<span>.</span></h3>
+        <p>Personal Profile • Electronics • Technology</p>
+        <p class="copyright">© 2026 Bayu. Personal Website.</p>
     </footer>
 
-
     <script src="script.js"></script>
-
 </body>
 
 </html>
-```
