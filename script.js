@@ -1,24 +1,4 @@
 // ============================================
-// ANIMASI SCROLL (Intersection Observer)
-// ============================================
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            }
-        });
-    },
-    { threshold: 0.12 }
-);
-
-revealElements.forEach(function (element) {
-    revealObserver.observe(element);
-});
-
-// ============================================
 // DARK / LIGHT MODE DENGAN LOCALSTORAGE
 // ============================================
 const darkModeBtn = document.getElementById("darkMode");
