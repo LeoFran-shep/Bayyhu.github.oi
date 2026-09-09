@@ -713,16 +713,10 @@ footer span {
     font-size: 12px;
 }
 
-/* ================= SCROLL ANIMATION ================= */
+/* ================= SCROLL ANIMATION (LANGSUNG TERLIHAT) ================= */
 .reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Langsung 100% terlihat */
+    transform: translateY(0); /* Posisi normal */
 }
 
 /* ================= LIGHT MODE FIXES ================= */
