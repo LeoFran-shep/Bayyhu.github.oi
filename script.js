@@ -1,71 +1,138 @@
 ```javascript
-// ========================================
-// DARK MODE
-// ========================================
+// ============================================
+// ANIMASI SCROLL
+// ============================================
 
-const darkModeButton = document.getElementById("darkMode");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-darkModeButton.addEventListener("click", function () {
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(function(element) {
+
+    revealObserver.observe(element);
+
+});
+
+
+// ============================================
+// DARK / LIGHT MODE
+// ============================================
+
+const darkMode =
+    document.getElementById("darkMode");
+
+
+darkMode.addEventListener("click", function() {
 
     document.body.classList.toggle("light");
 
-    if (document.body.classList.contains("light")) {
 
-        darkModeButton.innerHTML = "☀️";
+    if (
+        document.body.classList.contains("light")
+    ) {
+
+        darkMode.innerHTML = "🌙";
 
     } else {
 
-        darkModeButton.innerHTML = "🌙";
+        darkMode.innerHTML = "☀";
 
     }
 
 });
 
 
-// ========================================
-// ANIMASI SAAT SCROLL
-// ========================================
+// ============================================
+// EFEK MOUSE PADA PROJECT
+// ============================================
 
-const cards = document.querySelectorAll(
-    ".skill-card, .project-card, .journal-card"
-);
-
-const observer = new IntersectionObserver(
-    function(entries) {
-
-        entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
+const projectCards =
+    document.querySelectorAll(".project-card");
 
 
-cards.forEach(function(card) {
+projectCards.forEach(function(card) {
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "0.6s";
+    card.addEventListener(
+        "mousemove",
+        function(event) {
 
-    observer.observe(card);
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const centerX =
+                rect.width / 2;
+
+            const centerY =
+                rect.height / 2;
+
+            const rotateX =
+                (y - centerY) / 25;
+
+            const rotateY =
+                (centerX - x) / 25;
+
+
+            card.style.transform =
+                `perspective(700px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-8px)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        function() {
+
+            card.style.transform = "";
+
+        }
+    );
 
 });
 
 
-// ========================================
+// ============================================
 // CONSOLE
-// ========================================
+// ============================================
 
-console.log("Website Bayu berhasil dijalankan 🚀");
-console.log("Selamat datang di profil pribadi Bayu!");
+console.log(
+    "🚀 Website Bayu berhasil dijalankan!"
+);
+
+console.log(
+    "⚡ Electronics • Technology • Creativity"
+);
 ```
