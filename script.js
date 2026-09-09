@@ -1,138 +1,90 @@
-```javascript
 // ============================================
-// ANIMASI SCROLL
+// ANIMASI SCROLL (Intersection Observer)
 // ============================================
+const revealElements = document.querySelectorAll(".reveal");
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver(
+    function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    { threshold: 0.12 }
+);
 
-
-const revealObserver =
-    new IntersectionObserver(
-
-        function(entries) {
-
-            entries.forEach(function(entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("active");
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.12
-        }
-
-    );
-
-
-revealElements.forEach(function(element) {
-
+revealElements.forEach(function (element) {
     revealObserver.observe(element);
-
 });
 
-
 // ============================================
-// DARK / LIGHT MODE
+// DARK / LIGHT MODE DENGAN LOCALSTORAGE
 // ============================================
+const darkModeBtn = document.getElementById("darkMode");
+const savedTheme = localStorage.getItem("theme");
 
-const darkMode =
-    document.getElementById("darkMode");
+if (savedTheme === "light") {
+    document.body.classList.add("light");
+    darkModeBtn.innerHTML = "🌙";
+} else {
+    darkModeBtn.innerHTML = "☀";
+}
 
-
-darkMode.addEventListener("click", function() {
-
+darkModeBtn.addEventListener("click", function () {
     document.body.classList.toggle("light");
 
-
-    if (
-        document.body.classList.contains("light")
-    ) {
-
-        darkMode.innerHTML = "🌙";
-
+    if (document.body.classList.contains("light")) {
+        darkModeBtn.innerHTML = "🌙";
+        localStorage.setItem("theme", "light");
     } else {
-
-        darkMode.innerHTML = "☀";
-
+        darkModeBtn.innerHTML = "☀";
+        localStorage.setItem("theme", "dark");
     }
-
 });
 
-
 // ============================================
-// EFEK MOUSE PADA PROJECT
+// MENU HAMBURGER MOBILE
 // ============================================
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-menu a");
 
-const projectCards =
-    document.querySelectorAll(".project-card");
-
-
-projectCards.forEach(function(card) {
-
-    card.addEventListener(
-        "mousemove",
-        function(event) {
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                event.clientX - rect.left;
-
-            const y =
-                event.clientY - rect.top;
-
-            const centerX =
-                rect.width / 2;
-
-            const centerY =
-                rect.height / 2;
-
-            const rotateX =
-                (y - centerY) / 25;
-
-            const rotateY =
-                (centerX - x) / 25;
-
-
-            card.style.transform =
-                `perspective(700px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-8px)`;
-
-        }
-    );
-
-
-    card.addEventListener(
-        "mouseleave",
-        function() {
-
-            card.style.transform = "";
-
-        }
-    );
-
+hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
 });
 
+// Tutup menu saat tautan navigasi diklik
+navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+    });
+});
 
 // ============================================
-// CONSOLE
+// EFEK MOUSE PADA PROJECT CARD
 // ============================================
+const projectCards = document.querySelectorAll(".project-card");
 
-console.log(
-    "🚀 Website Bayu berhasil dijalankan!"
-);
+projectCards.forEach(function (card) {
+    card.addEventListener("mousemove", function (event) {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-console.log(
-    "⚡ Electronics • Technology • Creativity"
-);
-```
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 25;
+        const rotateY = (centerX - x) / 25;
+
+        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    });
+
+    card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+    });
+});
+
+console.log("🚀 Website Bayu berhasil dijalankan!");
+console.log("⚡ Electronics • Technology • Creativity");
