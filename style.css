@@ -6,11 +6,11 @@
 }
 
 :root {
-    /* Palet Warna Baru: Lebih Halus & Modern */
-    --green: #10b981;       /* Emerald Green yang lebih kalem dan premium */
+    /* Palet Warna Mode Gelap (Default) */
+    --green: #10b981;       
     --green-glow: rgba(16, 185, 129, 0.4);
     --green2: #059669;
-    --black: #09090b;       /* Pure dark dengan sedikit hint biru/abu */
+    --black: #09090b;       
     --dark: #121214;
     --card: #18181b;
     --border: #27272a;
@@ -19,7 +19,6 @@
 }
 
 body {
-    /* Menggunakan font modern */
     font-family: 'Plus Jakarta Sans', sans-serif;
     background: var(--black);
     color: var(--text);
@@ -28,7 +27,7 @@ body {
     transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* ================= ANIMASI AMAN (CSS ONLY) ================= */
+/* ================= ANIMASI AMAN ================= */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -42,10 +41,9 @@ body {
 
 .reveal {
     animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    opacity: 0; /* Mulai dari transparan sebelum animasi jalan */
+    opacity: 0; 
 }
 
-/* Membuat elemen muncul bergantian (staggered effect) */
 .hero-text { animation-delay: 0.1s; }
 .hero-card { animation-delay: 0.3s; }
 .section-title { animation-delay: 0.2s; }
@@ -262,7 +260,7 @@ nav {
 .button-outline {
     border: 1px solid var(--border);
     color: var(--text);
-    background: rgba(255,255,255,0.02);
+    background: transparent;
 }
 
 .button-outline:hover {
@@ -346,8 +344,8 @@ section {
 
 .dark-section {
     background: var(--dark);
-    border-top: 1px solid rgba(255,255,255,0.02);
-    border-bottom: 1px solid rgba(255,255,255,0.02);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .section-title {
@@ -405,7 +403,7 @@ section {
     border-radius: 24px;
     font-size: 50px;
     background: var(--dark);
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
 }
 
 .profile-box h3 {
@@ -477,7 +475,6 @@ section {
 .skill-card:hover {
     transform: translateY(-8px);
     border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(255, 255, 255, 0.02);
 }
 
 .skill-icon {
@@ -520,6 +517,7 @@ section {
     font-weight: 800;
     color: rgba(255, 255, 255, 0.03);
     transition: 0.3s;
+    z-index: 0;
 }
 
 .project-card:hover .project-number {
@@ -530,6 +528,8 @@ section {
 .project-icon {
     font-size: 45px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .tags {
@@ -537,6 +537,8 @@ section {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .tags span {
@@ -665,67 +667,52 @@ footer span {
     color: var(--green);
 }
 
-/* ================= LIGHT MODE FIXES (REFINED) ================= */
+
+/* ================= PERBAIKAN LIGHT MODE (100% AMAN) ================= */
 body.light {
-    background: #f8fafc;
-    color: #0f172a;
+    /* MENGUBAH SEMUA VARIABEL KE VERSI TERANG (TERMASUK TEXT) */
+    --black: #f8fafc;       /* Background utama menjadi putih keabu-abuan */
+    --dark: #f1f5f9;        /* Background section menjadi abu-abu sangat terang */
+    --card: #ffffff;        /* Background kartu menjadi putih bersih */
+    --border: #e2e8f0;      /* Garis batas menjadi abu-abu */
+    --text: #0f172a;        /* TEKS MENJADI BIRU DONGKER GELAP (TIDAK LAGI PUTIH) */
+    --gray: #64748b;        /* Teks sekunder menjadi abu-abu gelap */
+    --green-glow: rgba(16, 185, 129, 0.15); /* Glow lebih tipis di light mode */
 }
 
+/* Menyesuaikan beberapa elemen spesifik untuk light mode */
 body.light nav {
     background: rgba(255, 255, 255, 0.85);
-    border-bottom-color: #e2e8f0;
 }
 
-body.light .nav-menu a { color: #64748b; }
-body.light .nav-menu a:hover { color: var(--green2); }
-
-body.light #darkMode {
-    background: #ffffff;
-    border-color: #cbd5e1;
-    color: #0f172a;
-}
-
-body.light .hamburger span { background-color: #0f172a; }
-
-body.light .dark-section {
-    background: #f1f5f9;
-    border-color: #e2e8f0;
-}
-
-body.light .hero-card,
-body.light .profile-box,
-body.light .skill-card,
-body.light .project-card,
-body.light .journal-card,
-body.light .timeline-content,
-body.light .achievement-card {
-    background: #ffffff;
-    border-color: #e2e8f0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
-
-body.light .description, body.light .section-desc, body.light p, body.light .journal-type {
-    color: #475569;
+body.light .hero-card {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 body.light .location {
     background: #ffffff;
-    border-color: #cbd5e1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+body.light .button-outline:hover {
+    background: rgba(15, 23, 42, 0.05); 
 }
 
 body.light .tags span {
-    background: #f1f5f9;
-    color: #334155;
-    border: 1px solid #e2e8f0;
+    background: var(--dark);
+    color: var(--text);
 }
 
-body.light .button-outline {
-    background: transparent;
-    border-color: #cbd5e1;
-    color: #0f172a;
+body.light .project-number {
+    color: rgba(15, 23, 42, 0.05); /* Angka besar di belakang kartu disamarkan */
 }
 
-body.light .project-number { color: #f1f5f9; }
+body.light .winner {
+    color: #d97706; /* Emas yang lebih gelap agar mudah dibaca di layar putih */
+    background: rgba(217, 119, 6, 0.1);
+}
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
@@ -745,7 +732,7 @@ body.light .project-number { color: #f1f5f9; }
         padding: 50px 0;
     }
     
-    body.light .nav-menu { background: rgba(255, 255, 255, 0.98); border-left-color: #e2e8f0; }
+    body.light .nav-menu { background: rgba(255, 255, 255, 0.98); }
     .nav-menu.active { right: 0; }
     .nav-menu a { font-size: 18px; }
     
