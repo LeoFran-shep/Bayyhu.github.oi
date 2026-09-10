@@ -27,12 +27,7 @@
         </div>
 
         <div class="nav-actions">
-            <!-- UI Kit Toggle Switch untuk Dark Mode -->
-            <label class="ui-switch" aria-label="Toggle Dark Mode">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
-            </label>
-            
+            <button id="darkMode" aria-label="Toggle Dark Mode">☀</button>
             <div class="hamburger" id="hamburger" aria-label="Toggle Menu">
                 <span></span><span></span><span></span>
             </div>
@@ -43,18 +38,18 @@
     <section id="home" class="hero">
         <div class="hero-background"></div>
         <div class="hero-text reveal">
-            <p class="small-title">SYSTEM DASHBOARD • V1.0</p>
+            <p class="small-title">STUDENT • ELECTRONICS • TECHNOLOGY</p>
             <h1>Halo, saya <span>Bayu.</span></h1>
             <p class="description">
-                Halo semua! Terima kasih sudah mampir. Perkenalkan, saya Bayu, 
-                murid SMK Negeri 7 Surabaya yang suka bereksperimen dengan elektronika dan teknologi.
+                Halo semua! Terima kasih sudah mampir untuk melihat seputar tentang saya. 
+                Perkenalkan, saya Bayu, murid SMK Negeri 7 Surabaya yang suka mencoba pengalaman baru.
             </p>
             <div class="location">
-                <div class="ui-indicator"></div> Surabaya Barat
+                📍 Surabaya Barat
             </div>
             <div class="hero-buttons">
-                <a href="#profil" class="ui-button primary">Kenali Saya</a>
-                <a href="#proyek" class="ui-button secondary">Data Proyek</a>
+                <a href="#profil" class="button">Kenali Saya →</a>
+                <a href="#proyek" class="button-outline">Lihat Proyek</a>
             </div>
         </div>
 
@@ -63,7 +58,7 @@
             <h2>BAYU</h2>
             <p>Electronics Enthusiast</p>
             <div class="status">
-                <span></span> SYSTEM ACTIVE
+                <span></span> Selalu mencari pengalaman baru
             </div>
         </div>
     </section>
@@ -71,134 +66,84 @@
     <!-- ================= PROFIL ================= -->
     <section id="profil">
         <div class="section-title reveal">
-            <p>ABOUT MODULE</p>
-            <h2>Profil Sistem</h2>
+            <p>TENTANG SAYA</p>
+            <h2>Profil</h2>
         </div>
         <div class="profile-box reveal">
             <div class="profile-icon">⚡</div>
             <div>
-                <h3>Pelajar yang efisien.</h3>
+                <h3>Pelajar yang tidak suka membuang waktu.</h3>
                 <p>Saya adalah seorang pelajar yang berusaha menggunakan waktu secara efisien untuk belajar, bermain, dan mencari pengalaman baru khususnya di bidang elektronika.</p>
-                <p>Saya suka menganalisis masalah dan memberikan kritik yang membangun untuk menemukan solusi terbaik.</p>
+                <p>Saya suka menganalisis masalah dan memberikan kritik yang membangun untuk membantu menemukan solusi yang lebih baik.</p>
             </div>
         </div>
     </section>
 
-    <!-- ================= SKILL (DIUBAH JADI PROGRESS BARS) ================= -->
+    <!-- ================= SKILL ================= -->
     <section id="skill" class="dark-section">
         <div class="section-title reveal">
-            <p>CAPABILITY METRICS</p>
+            <p>APA YANG SAYA KUASAI</p>
             <h2>Keahlian & Minat</h2>
         </div>
-
-        <div class="skill-dashboard reveal">
-            
-            <!-- Skill 1 -->
-            <div class="ui-progress-card">
-                <div class="skill-info">
-                    <span class="skill-name">⚡ Elektronika</span>
-                    <span class="skill-value">90%</span>
-                </div>
-                <div class="ui-progress-bg">
-                    <div class="ui-progress-fill" style="width: 90%;"></div>
-                </div>
+        <div class="skill-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon">⚡</div>
+                <h3>Elektronika</h3>
+                <p>Mempelajari rangkaian elektronik, sensor dan berbagai komponen.</p>
             </div>
-
-            <!-- Skill 2 -->
-            <div class="ui-progress-card">
-                <div class="skill-info">
-                    <span class="skill-name">🔧 Arduino</span>
-                    <span class="skill-value">85%</span>
-                </div>
-                <div class="ui-progress-bg">
-                    <div class="ui-progress-fill" style="width: 85%;"></div>
-                </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🔧</div>
+                <h3>Arduino</h3>
+                <p>Membuat dan menguji berbagai proyek menggunakan mikrokontroler.</p>
             </div>
-
-            <!-- Skill 3 -->
-            <div class="ui-progress-card">
-                <div class="skill-info">
-                    <span class="skill-name">💻 Coding</span>
-                    <span class="skill-value">75%</span>
-                </div>
-                <div class="ui-progress-bg">
-                    <div class="ui-progress-fill" style="width: 75%;"></div>
-                </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">💻</div>
+                <h3>Coding</h3>
+                <p>Membuat program untuk mikrokontroler dan proyek elektronik.</p>
             </div>
-
-            <!-- Skill 4 -->
-            <div class="ui-progress-card">
-                <div class="skill-info">
-                    <span class="skill-name">🧠 Problem Solving</span>
-                    <span class="skill-value">80%</span>
-                </div>
-                <div class="ui-progress-bg">
-                    <div class="ui-progress-fill" style="width: 80%;"></div>
-                </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon">🧠</div>
+                <h3>Problem Solving</h3>
+                <p>Menganalisis masalah dan mencari solusi yang efektif.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- ================= PROYEK (DIUBAH JADI APP WINDOWS) ================= -->
+    <!-- ================= PROYEK ================= -->
     <section id="proyek">
         <div class="section-title reveal">
-            <p>PROJECT DATABASE</p>
+            <p>HASIL YANG PERNAH DIBUAT</p>
             <h2>Pengalaman Proyek</h2>
         </div>
 
         <div class="project-grid">
-            <!-- PROJECT 1 -->
-            <div class="project-window reveal">
-                <div class="window-header">
-                    <div class="window-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <div class="window-title">Tester.exe</div>
-                </div>
-                <div class="window-body">
-                    <div class="project-icon">📟</div>
-                    <h3>Auto OLED + MQ Tester</h3>
-                    <p>Board tester berbasis STM32 yang menggabungkan OLED dengan sensor MQ untuk pengujian komponen.</p>
-                    <div class="tags">
-                        <span>STM32</span><span>OLED</span><span>MQ Sensor</span>
-                    </div>
+            <div class="project-card reveal">
+                <div class="project-number">01</div>
+                <div class="project-icon">📟</div>
+                <h3>Board Auto OLED + MQ Tester</h3>
+                <p>Membuat board tester menggunakan STM32 yang menggabungkan OLED dengan sensor MQ untuk membantu proses pengujian.</p>
+                <div class="tags">
+                    <span>STM32</span><span>OLED</span><span>MQ Sensor</span>
                 </div>
             </div>
 
-            <!-- PROJECT 2 -->
-            <div class="project-window reveal">
-                <div class="window-header">
-                    <div class="window-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <div class="window-title">Robot_RC.sys</div>
-                </div>
-                <div class="window-body">
-                    <div class="project-icon">🤖</div>
-                    <h3>Robot Mobil Capit RC</h3>
-                    <p>Sistem robotik mobil dengan kontrol RC dilengkapi mekanisme capit mekanis. Memadukan elektronika dan motor.</p>
-                    <div class="tags">
-                        <span>Robotik</span><span>Motor</span><span>RC</span>
-                    </div>
+            <div class="project-card reveal">
+                <div class="project-number">02</div>
+                <div class="project-icon">🤖</div>
+                <h3>Robot Mobil Capit RC</h3>
+                <p>Membuat robot mobil dengan sistem kontrol RC yang dilengkapi mekanisme capit. Menggabungkan mekanik dan elektronika.</p>
+                <div class="tags">
+                    <span>Robotik</span><span>Motor</span><span>RC</span>
                 </div>
             </div>
 
-            <!-- PROJECT 3 -->
-            <div class="project-window reveal">
-                <div class="window-header">
-                    <div class="window-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <div class="window-title">AudioSys.bat</div>
-                </div>
-                <div class="window-body">
-                    <div class="project-icon">🔊</div>
-                    <h3>Sound System</h3>
-                    <p>Sistem audio kustom; meliputi pengolahan sinyal suara, pembuatan amplifier, hingga output speaker optimal.</p>
-                    <div class="tags">
-                        <span>Audio</span><span>Amplifier</span><span>TAV</span>
-                    </div>
+            <div class="project-card reveal">
+                <div class="project-number">03</div>
+                <div class="project-icon">🔊</div>
+                <h3>Sound System</h3>
+                <p>Membuat dan mempelajari sistem audio, mulai dari pengolahan sinyal suara, amplifier, hingga output speaker.</p>
+                <div class="tags">
+                    <span>Audio</span><span>Amplifier</span><span>TAV</span>
                 </div>
             </div>
         </div>
@@ -207,28 +152,22 @@
     <!-- ================= PRESTASI ================= -->
     <section id="prestasi" class="dark-section">
         <div class="section-title reveal">
-            <p>ACHIEVEMENT UNLOCKED</p>
+            <p>PENCAPAIAN</p>
             <h2>Prestasi</h2>
         </div>
 
-        <div class="achievement-panel reveal">
+        <div class="achievement-card reveal">
             <div class="achievement-badge">
-                <div class="badge-ring"></div>
-                <strong>1ST</strong>
+                <strong>JUARA</strong>
+                <span>PERVEKT</span>
             </div>
             <div class="achievement-text">
-                <div class="ui-label">🏆 JUARA LOMBA</div>
+                <div class="winner">🏆 JUARA LOMBA</div>
                 <h3>Program PERVEKT SMK Se-Jawa Timur</h3>
-                <p>Meraih juara dalam lomba Program Entrepreneur Vokasi Kreatif Terpadu (PERVEKT) bagi siswa SMK yang diadakan oleh Dinas Pendidikan Provinsi Jawa Timur.</p>
-                <div class="achievement-stats">
-                    <div class="stat-box">
-                        <span class="stat-title">Level</span>
-                        <span class="stat-value">Jawa Timur</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-title">Kategori</span>
-                        <span class="stat-value">Kewirausahaan</span>
-                    </div>
+                <p>Saya berhasil meraih juara dalam lomba Program PERVEKT SMK (Program Entrepreneur Vokasi Kreatif Terpadu) untuk Kewirausahaan.</p>
+                <p>Program ini dirancang oleh Dinas Pendidikan Provinsi Jawa Timur untuk melahirkan wirausahawan muda yang tangguh dan kreatif.</p>
+                <div class="tags">
+                    <span>🏆 JUARA</span><span>JAWA TIMUR</span><span>KEWIRAUSAHAAN</span>
                 </div>
             </div>
         </div>
@@ -237,8 +176,8 @@
     <!-- ================= FOOTER ================= -->
     <footer>
         <h3>BAYU<span>.</span></h3>
-        <p>System UI • Electronics • Technology</p>
-        <p class="copyright">© 2026 Bayu. Dashboard Version.</p>
+        <p>Personal Profile • Electronics • Technology</p>
+        <p class="copyright">© 2026 Bayu. Personal Website.</p>
     </footer>
 
     <script src="script.js"></script>
