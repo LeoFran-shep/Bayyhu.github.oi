@@ -1,3 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Bayu - Electronics & Robotics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050b14;
+            --text-main: #a2b2c9;
+            --neon-cyan: #00f3ff;
+            --neon-green: #39ff14;
+            --panel-bg: rgba(10, 20, 35, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Share Tech Mono', monospace;
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Teks Menyala */
+        h1, h2, h3 {
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+        }
+
+        /* HEADER ANIMASI PULSE */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--neon-cyan);
+            background: var(--panel-bg);
+            position: relative;
+            animation: borderPulse 3s infinite;
+        }
+
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(0, 243, 255, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+        }
+
+        .header::before {
+            content: "[ SYSTEM ONLINE ]";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-color);
+            color: var(--neon-green);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .typing-text {
+            border-right: 2px solid var(--neon-cyan);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /* ANIMASI SCROLL (REVEAL) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--panel-bg);
+            border-left: 4px solid var(--neon-cyan);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        section:hover {
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
+            border-left-color: var(--neon-green);
+        }
+
+        section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 1px dashed rgba(0, 243, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        ul { list-style: none; }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        ul li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* PROJECT CARDS */
+        .project-card {
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
             top: 0; left: -100%;
             width: 50%; height: 100%;
             background: linear-gradient(to right, transparent, rgba(0, 243, 255, 0.2), transparent);
