@@ -1,147 +1,17 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Bayu - Electronics & Robotics</title>
-    <!-- Menggunakan font bergaya teknologi -->
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #050b14;
-            --text-main: #a2b2c9;
-            --neon-cyan: #00f3ff;
-            --neon-green: #39ff14;
-            --panel-bg: rgba(10, 20, 35, 0.8);
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(0, 243, 255, 0.2), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Share Tech Mono', monospace;
-            line-height: 1.6;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-            background-size: 30px 30px;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Glitch Title Effect */
-        h1, h2, h3 {
-            color: var(--neon-cyan);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            border: 1px solid var(--neon-cyan);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-            background: var(--panel-bg);
-            position: relative;
-        }
-
-        .header::before {
-            content: "[ SYSTEM OFFLINE ]";
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--bg-color);
-            color: var(--neon-cyan);
-            padding: 0 10px;
-            font-size: 0.9rem;
-            animation: blink 2s infinite;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px var(--neon-cyan);
-        }
-
-        .location {
-            color: var(--neon-green);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .typing-text {
-            border-right: 2px solid var(--neon-cyan);
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-        }
-
-        /* Section Styling */
-        section {
-            background: var(--panel-bg);
-            border-left: 4px solid var(--neon-cyan);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            transition: 0.3s;
-        }
-
-        section:hover {
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
-            border-left-color: var(--neon-green);
-        }
-
-        section h2 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            border-bottom: 1px dashed rgba(0, 243, 255, 0.3);
-            padding-bottom: 5px;
-        }
-
-        /* Lists and Grids */
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        ul li::before {
-            content: ">";
-            position: absolute;
-            left: 0;
-            color: var(--neon-green);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .project-card {
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
+        .project-card:hover::before {
+            left: 125%;
         }
 
         .project-card:hover {
             border-color: var(--neon-green);
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4), inset 0 0 10px rgba(57, 255, 20, 0.1);
             transform: translateY(-5px);
         }
 
@@ -149,15 +19,24 @@
             font-size: 1.1rem;
             color: var(--neon-green);
             margin-bottom: 10px;
+            text-shadow: 0 0 5px var(--neon-green);
         }
 
-        /* Animations */
-        @keyframes blink {
-            0%, 49% { opacity: 1; content: "[ SYSTEM ONLINE ]"; }
-            50%, 100% { opacity: 0.5; }
+        /* KOTAK SERTIFIKAT KHUSUS */
+        .achievement-box {
+            border: 1px solid var(--neon-green);
+            padding: 15px;
+            background: rgba(57, 255, 20, 0.05);
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
         }
 
-        /* Terminal styling for code snippets or tech specs */
+        .achievement-box h3 {
+            color: var(--neon-green);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
         .terminal {
             background: #000;
             padding: 10px;
@@ -168,14 +47,9 @@
             font-size: 0.9rem;
         }
 
-        /* Responsiveness */
         @media (max-width: 600px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .header h1 {
-                font-size: 2rem;
-            }
+            .grid-2 { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -183,20 +57,23 @@
 
     <div class="container">
         <!-- HEADER / HERO SECTION -->
-        <header class="header">
-            <p class="location"><i class="fa fa-map-marker"></i> Lokasi: Surabaya Barat</p>
+        <header class="header reveal">
+            <p class="location">Lokasi: Surabaya Barat</p>
+            
             <h1>BAYU</h1>
+            
             <div style="height: 30px;">
                 <p id="typewriter" class="typing-text"></p>
             </div>
+            
             <p style="margin-top: 15px; font-size: 0.95rem;">
                 "Halo semua! Terima kasih sudah mampir untuk melihat seputar tentang saya. Perkenalkan saya Bayu, murid SMKN 7 Surabaya yang selalu antusias mencoba pengalaman baru."
             </p>
         </header>
 
-        <!-- TENTANG & PENDIDIKAN -->
         <div class="grid-2">
-            <section id="profil">
+            <!-- BAGIAN PROFIL -->
+            <section id="profil" class="reveal">
                 <h2>_Profil Karakter</h2>
                 <p>
                     Seorang pelajar yang sangat menghargai waktu dan tidak suka membuangnya dengan percuma. Sangat efisien dalam membagi waktu untuk <strong>belajar, bermain, dan mencari pengalaman baru</strong> khususnya di bidang elektro dan teknologi.
@@ -207,7 +84,8 @@
                 </div>
             </section>
 
-            <section id="pendidikan">
+            <!-- BAGIAN PENDIDIKAN -->
+            <section id="pendidikan" class="reveal">
                 <h2>_Data Pendidikan</h2>
                 <ul>
                     <li>
@@ -219,7 +97,7 @@
         </div>
 
         <!-- KEAHLIAN & MINAT -->
-        <section id="skills">
+        <section id="skills" class="reveal">
             <h2>_Keahlian & Minat</h2>
             <div class="grid-2">
                 <div>
@@ -232,50 +110,67 @@
                 <div>
                     <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--text-main);">Minat & Hobi:</h3>
                     <ul>
-                        <li>Hardware: Arduino, Elektronika (STM32, dsb)</li>
+                        <li>Hardware: Arduino, Elektronika, Mikrokontroler</li>
                         <li>Software: Pemrograman / Coding</li>
-                        <li>Esports: Bermain Mobile Legends</li>
+                        <li>Gaming: Mobile Legends</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- PENGALAMAN PROYEK -->
-        <section id="proyek">
+        <section id="proyek" class="reveal">
             <h2>_Log Proyek</h2>
             <div class="grid-2">
                 <div class="project-card">
                     <h3>> Auto OLED + MQ Tester</h3>
-                    <p>Pengembangan purwarupa (board) menggunakan mikrokontroler STM32 yang diintegrasikan dengan layar OLED dan sensor gas/asap (MQ Series) untuk keperluan pengujian otomatis.</p>
+                    <p>Pengembangan purwarupa board menggunakan mikrokontroler STM32 yang diintegrasikan dengan layar OLED dan sensor gas/asap untuk keperluan pengujian otomatis.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>> Smart RC Car</h3>
-                    <p>Merakit dan memprogram mobil robotik yang sistem kendalinya dapat dioperasikan secara nirkabel langsung melalui antarmuka HP/Smartphone.</p>
+                    <h3>> Robot Mobil Capit RC</h3>
+                    <p>Merakit dan memprogram robot mobil yang dilengkapi lengan capit (gripper). Sistem kendali dioperasikan secara nirkabel (Remote Control) untuk memindahkan objek.</p>
+                </div>
+
+                <div class="project-card" style="grid-column: 1 / -1;">
+                    <h3>> Perakitan Sound System</h3>
+                    <p>Merancang, merakit, dan mengkonfigurasi perangkat audio (Sound System) sesuai dengan standar kelistrikan dan akustik, menerapkan ilmu dari keahlian Teknik Audio Video.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PENCAPAIAN (JURNAL & SERTIFIKAT) -->
-        <section id="pencapaian">
+        <!-- PENCAPAIAN (SERTIFIKAT) -->
+        <section id="pencapaian" class="reveal">
             <h2>_Arsip & Pencapaian</h2>
-            <ul>
-                <li><strong>Sertifikat:</strong> Lomba Perfect SMK Se-Jawa Timur.</li>
-                <li><strong>Jurnal Publikasi / Catatan:</strong> 
+            
+            <div class="achievement-box">
+                <h3>[ WINNER ] Lomba PERVEKT SMK Se-Jawa Timur</h3>
+                <p style="font-size: 0.9rem; text-align: justify; margin-top: 10px;">
+                    Berhasil meraih gelar <strong>Juara</strong> dalam <em>Program Entrepreneur Vokasi Kreatif Terpadu (PERVEKT)</em> tingkat provinsi yang diselenggarakan oleh Dinas Pendidikan Jawa Timur. Kompetisi ini menguji keterampilan vokasi sekaligus pola pikir kewirausahaan untuk menciptakan inovasi yang berdaya saing tinggi. Pencapaian ini membuktikan kemampuan saya dalam merancang solusi teknis/kreatif yang tidak hanya berfungsi dengan baik, tetapi juga memiliki nilai jual dan potensi bisnis yang nyata.
+                </p>
+                <div class="terminal" style="margin-top: 10px; border-color: var(--neon-green);">
+                    > Status Verifikasi: JUARA (PROVINSI JAWA TIMUR)<br>
+                    > Kategori: Kewirausahaan & Vokasi Kreatif Terpadu
+                </div>
+            </div>
+
+            <ul style="margin-top: 15px;">
+                <li><strong>Jurnal / Catatan:</strong> 
                     <span style="color: #666; font-style: italic;">[ Menunggu Pembaruan Data ... ]</span>
                 </li>
             </ul>
         </section>
 
-        <div style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 2rem;">
+        <div style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 2rem; margin-bottom: 2rem;">
             <p>USER: BAYU | DIR: /ROOT/CV | SYS: NORMAL</p>
         </div>
     </div>
 
-    <!-- Script untuk efek mengetik otomatis di header -->
+    <!-- SCRIPT JAVASCRIPT -->
     <script>
         const text = "STUDENT | ELECTRONICS ENTHUSIAST | PROGRAMMER";
         let i = 0;
-        const speed = 100; // Kecepatan ketik (ms)
+        const speed = 100;
 
         function typeWriter() {
             if (i < text.length) {
@@ -285,8 +180,24 @@
             }
         }
 
-        // Jalankan efek saat halaman dimuat
         window.onload = typeWriter;
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
     </script>
 </body>
 </html>
