@@ -3,183 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bayu | Personal Profile</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>CV | Bayu - Electronics & Robotics</title>
+    <!-- Menggunakan font bergaya teknologi -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050b14;
+            --text-main: #a2b2c9;
+            --neon-cyan: #00f3ff;
+            --neon-green: #39ff14;
+            --panel-bg: rgba(10, 20, 35, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Share Tech Mono', monospace;
+            line-height: 1.6;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Glitch Title Effect */
+        h1, h2, h3 {
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+            background: var(--panel-bg);
+            position: relative;
+        }
+
+        .header::before {
+            content: "[ SYSTEM OFFLINE ]";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-color);
+            color: var(--neon-cyan);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            animation: blink 2s infinite;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .location {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .typing-text {
+            border-right: 2px solid var(--neon-cyan);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /* Section Styling */
+        section {
+            background: var(--panel-bg);
+            border-left: 4px solid var(--neon-cyan);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+        }
+
+        section:hover {
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            border-left-color: var(--neon-green);
+        }
+
+        section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 1px dashed rgba(0, 243, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        /* Lists and Grids */
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--neon-green);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            color: var(--neon-green);
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes blink {
+            0%, 49% { opacity: 1; content: "[ SYSTEM ONLINE ]"; }
+            50%, 100% { opacity: 0.5; }
+        }
+
+        /* Terminal styling for code snippets or tech specs */
+        .terminal {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            color: var(--neon-green);
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav>
-        <div class="logo">BAYU<span>.</span></div>
-
-        <div class="nav-menu" id="navMenu">
-            <a href="#home">Home</a>
-            <a href="#profil">Profil</a>
-            <a href="#skill">Skill</a>
-            <a href="#proyek">Proyek</a>
-            <a href="#jurnal">Jurnal</a>
-            <a href="#prestasi">Prestasi</a>
-        </div>
-
-        <div class="nav-actions">
-            <button id="darkMode" aria-label="Toggle Dark Mode">☀</button>
-            <div class="hamburger" id="hamburger" aria-label="Toggle Menu">
-                <span></span><span></span><span></span>
+    <div class="container">
+        <!-- HEADER / HERO SECTION -->
+        <header class="header">
+            <p class="location"><i class="fa fa-map-marker"></i> Lokasi: Surabaya Barat</p>
+            <h1>BAYU</h1>
+            <div style="height: 30px;">
+                <p id="typewriter" class="typing-text"></p>
             </div>
-        </div>
-    </nav>
-
-    <!-- ================= HERO ================= -->
-    <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-text reveal">
-            <p class="small-title">STUDENT • ELECTRONICS • TECHNOLOGY</p>
-            <h1>Halo, saya <span>Bayu.</span></h1>
-            <p class="description">
-                Halo semua! Terima kasih sudah mampir untuk melihat seputar tentang saya. 
-                Perkenalkan, saya Bayu, murid SMK Negeri 7 Surabaya yang suka mencoba pengalaman baru.
+            <p style="margin-top: 15px; font-size: 0.95rem;">
+                "Halo semua! Terima kasih sudah mampir untuk melihat seputar tentang saya. Perkenalkan saya Bayu, murid SMKN 7 Surabaya yang selalu antusias mencoba pengalaman baru."
             </p>
-            <div class="location">
-                📍 Surabaya Barat
-            </div>
-            <div class="hero-buttons">
-                <a href="#profil" class="button">Kenali Saya →</a>
-                <a href="#proyek" class="button-outline">Lihat Proyek</a>
-            </div>
+        </header>
+
+        <!-- TENTANG & PENDIDIKAN -->
+        <div class="grid-2">
+            <section id="profil">
+                <h2>_Profil Karakter</h2>
+                <p>
+                    Seorang pelajar yang sangat menghargai waktu dan tidak suka membuangnya dengan percuma. Sangat efisien dalam membagi waktu untuk <strong>belajar, bermain, dan mencari pengalaman baru</strong> khususnya di bidang elektro dan teknologi.
+                </p>
+                <div class="terminal">
+                    <p>Status: Pelajar Aktif</p>
+                    <p>Fokus: Mikrokontroler & Sistem Kendali</p>
+                </div>
+            </section>
+
+            <section id="pendidikan">
+                <h2>_Data Pendidikan</h2>
+                <ul>
+                    <li>
+                        <strong style="color: var(--neon-cyan);">SMK Negeri 7 Surabaya</strong><br>
+                        Jurusan: Teknik Audio Video (TAV)
+                    </li>
+                </ul>
+            </section>
         </div>
 
-        <div class="hero-card reveal">
-            <div class="glow-circle">B</div>
-            <h2>BAYU</h2>
-            <p>Electronics Enthusiast</p>
-            <div class="status">
-                <span></span> Selalu mencari pengalaman baru
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PROFIL ================= -->
-    <section id="profil">
-        <div class="section-title reveal">
-            <p>TENTANG SAYA</p>
-            <h2>Profil</h2>
-        </div>
-        <div class="profile-box reveal">
-            <div class="profile-icon">⚡</div>
-            <div>
-                <h3>Pelajar yang tidak suka membuang waktu.</h3>
-                <p>Saya adalah seorang pelajar yang berusaha menggunakan waktu secara efisien untuk belajar, bermain, dan mencari pengalaman baru khususnya di bidang elektronika.</p>
-                <p>Saya suka menganalisis masalah dan memberikan kritik yang membangun untuk membantu menemukan solusi yang lebih baik.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= SKILL ================= -->
-    <section id="skill" class="dark-section">
-        <div class="section-title reveal">
-            <p>APA YANG SAYA KUASAI</p>
-            <h2>Keahlian & Minat</h2>
-        </div>
-        <div class="skill-grid">
-            <div class="skill-card reveal">
-                <div class="skill-icon">⚡</div>
-                <h3>Elektronika</h3>
-                <p>Mempelajari rangkaian elektronik, sensor dan berbagai komponen.</p>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon">🔧</div>
-                <h3>Arduino</h3>
-                <p>Membuat dan menguji berbagai proyek menggunakan mikrokontroler.</p>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon">💻</div>
-                <h3>Coding</h3>
-                <p>Membuat program untuk mikrokontroler dan proyek elektronik.</p>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon">🧠</div>
-                <h3>Problem Solving</h3>
-                <p>Menganalisis masalah dan mencari solusi yang efektif.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PROYEK ================= -->
-    <section id="proyek">
-        <div class="section-title reveal">
-            <p>HASIL YANG PERNAH DIBUAT</p>
-            <h2>Pengalaman Proyek</h2>
-        </div>
-
-        <div class="project-grid">
-            <div class="project-card reveal">
-                <div class="project-number">01</div>
-                <div class="project-icon">📟</div>
-                <h3>Board Auto OLED + MQ Tester</h3>
-                <p>Membuat board tester menggunakan STM32 yang menggabungkan OLED dengan sensor MQ untuk membantu proses pengujian.</p>
-                <div class="tags">
-                    <span>STM32</span><span>OLED</span><span>MQ Sensor</span>
+        <!-- KEAHLIAN & MINAT -->
+        <section id="skills">
+            <h2>_Keahlian & Minat</h2>
+            <div class="grid-2">
+                <div>
+                    <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--text-main);">Keahlian Utama:</h3>
+                    <ul>
+                        <li>Ahli dalam menganalisis masalah teknis (Troubleshooting)</li>
+                        <li>Memberikan kritik yang membangun dan berbasis logika</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--text-main);">Minat & Hobi:</h3>
+                    <ul>
+                        <li>Hardware: Arduino, Elektronika (STM32, dsb)</li>
+                        <li>Software: Pemrograman / Coding</li>
+                        <li>Esports: Bermain Mobile Legends</li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card reveal">
-                <div class="project-number">02</div>
-                <div class="project-icon">🤖</div>
-                <h3>Robot Mobil Capit RC</h3>
-                <p>Membuat robot mobil dengan sistem kontrol RC yang dilengkapi mekanisme capit. Menggabungkan mekanik dan elektronika.</p>
-                <div class="tags">
-                    <span>Robotik</span><span>Motor</span><span>RC</span>
+        <!-- PENGALAMAN PROYEK -->
+        <section id="proyek">
+            <h2>_Log Proyek</h2>
+            <div class="grid-2">
+                <div class="project-card">
+                    <h3>> Auto OLED + MQ Tester</h3>
+                    <p>Pengembangan purwarupa (board) menggunakan mikrokontroler STM32 yang diintegrasikan dengan layar OLED dan sensor gas/asap (MQ Series) untuk keperluan pengujian otomatis.</p>
+                </div>
+                <div class="project-card">
+                    <h3>> Smart RC Car</h3>
+                    <p>Merakit dan memprogram mobil robotik yang sistem kendalinya dapat dioperasikan secara nirkabel langsung melalui antarmuka HP/Smartphone.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card reveal">
-                <div class="project-number">03</div>
-                <div class="project-icon">🔊</div>
-                <h3>Sound System</h3>
-                <p>Membuat dan mempelajari sistem audio, mulai dari pengolahan sinyal suara, amplifier, hingga output speaker.</p>
-                <div class="tags">
-                    <span>Audio</span><span>Amplifier</span><span>TAV</span>
-                </div>
-            </div>
+        <!-- PENCAPAIAN (JURNAL & SERTIFIKAT) -->
+        <section id="pencapaian">
+            <h2>_Arsip & Pencapaian</h2>
+            <ul>
+                <li><strong>Sertifikat:</strong> Lomba Perfect SMK Se-Jawa Timur.</li>
+                <li><strong>Jurnal Publikasi / Catatan:</strong> 
+                    <span style="color: #666; font-style: italic;">[ Menunggu Pembaruan Data ... ]</span>
+                </li>
+            </ul>
+        </section>
+
+        <div style="text-align: center; font-size: 0.8rem; color: #555; margin-top: 2rem;">
+            <p>USER: BAYU | DIR: /ROOT/CV | SYS: NORMAL</p>
         </div>
-    </section>
+    </div>
 
-    <!-- ================= PRESTASI ================= -->
-    <section id="prestasi" class="dark-section">
-        <div class="section-title reveal">
-            <p>PENCAPAIAN</p>
-            <h2>Prestasi</h2>
-        </div>
+    <!-- Script untuk efek mengetik otomatis di header -->
+    <script>
+        const text = "STUDENT | ELECTRONICS ENTHUSIAST | PROGRAMMER";
+        let i = 0;
+        const speed = 100; // Kecepatan ketik (ms)
 
-        <div class="achievement-card reveal">
-            <div class="achievement-badge">
-                <strong>JUARA</strong>
-                <span>PERVEKT</span>
-            </div>
-            <div class="achievement-text">
-                <div class="winner">🏆 JUARA LOMBA</div>
-                <h3>Program PERVEKT SMK Se-Jawa Timur</h3>
-                <p>Saya berhasil meraih juara dalam lomba Program PERVEKT SMK (Program Entrepreneur Vokasi Kreatif Terpadu) untuk Kewirausahaan.</p>
-                <p>Program ini dirancang oleh Dinas Pendidikan Provinsi Jawa Timur untuk melahirkan wirausahawan muda yang tangguh dan kreatif.</p>
-                <div class="tags">
-                    <span>🏆 JUARA</span><span>JAWA TIMUR</span><span>KEWIRAUSAHAAN</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <h3>BAYU<span>.</span></h3>
-        <p>Personal Profile • Electronics • Technology</p>
-        <p class="copyright">© 2026 Bayu. Personal Website.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        // Jalankan efek saat halaman dimuat
+        window.onload = typeWriter;
+    </script>
 </body>
 </html>
